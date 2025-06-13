@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  padding: 20px;
+
+  .logo {
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    button {
+      padding: 10px 20px;
+      border: 1px solid black;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #dfdfdf;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    .button-group {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .logo {
+      max-width: 250px;
+    }
+  }
+}
