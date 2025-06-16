@@ -27,8 +27,6 @@ export class AccueilComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
 }

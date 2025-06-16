@@ -21,6 +21,18 @@
       font-weight: 500;
       color: black;
       cursor: pointer;
+      padding: 8px 12px;
+      transition: color 0.3s ease;
+
+      &.active-link {
+        color: #007bff; // ou la couleur que tu veux pour le lien actif
+        font-weight: bold;
+        border-bottom: 2px solid #007bff;
+      }
+
+      &:hover {
+        color: #007bff;
+      }
 
       &.logout {
         color: #b00000;
@@ -62,14 +74,13 @@
     .nav-links.mobile {
       position: absolute;
       top: 60px;
-      left: 300px;
+      left: 200px;
       right: 0;
-      height: 90vh;
+      height: 100vh;
       background-color: white;
       flex-direction: column;
       padding: 10px 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      
 
       a {
         padding: 10px 0;

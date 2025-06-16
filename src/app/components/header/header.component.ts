@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +12,9 @@ import { AuthService } from 'src/app/services/auth-service.service';
   <!-- Menu desktop -->
   <nav class="nav-links desktop" >
     <a (click)="logout()"  class="logout">Se déconnecter</a>
-    <a>Articles</a>
-    <a>Thèmes</a>
-    <img src="assets/profil.png" alt="Profil" class="profile-icon" />
+    <a routerLink="/article" routerLinkActive="active-link">Articles</a>
+    <a routerLink="/theme" routerLinkActive="active-link">Thèmes</a>
+    <img src="assets/profil.png" alt="Profil" class="profile-icon" routerLink="/profil" />
   </nav>
 
   <!-- Icône burger menu mobile -->
@@ -25,9 +25,9 @@ import { AuthService } from 'src/app/services/auth-service.service';
   <!-- Menu mobile -->
   <nav class="nav-links mobile" *ngIf="showMobileMenu" >
     <a (click)="logout()"  class="logout">Se déconnecter</a>
-    <a>Articles</a>
-    <a>Thèmes</a>
-    <img src="assets/profil.png" alt="Profil" class="profile-icon" />
+    <a routerLink="/article" routerLinkActive="active-link">Articles</a>
+    <a routerLink="/theme" routerLinkActive="active-link">Thèmes</a>
+    <img src="assets/profil.png" alt="Profil" class="profile-icon" routerLink="/profil"/>
   </nav>
   </div>
 </header>

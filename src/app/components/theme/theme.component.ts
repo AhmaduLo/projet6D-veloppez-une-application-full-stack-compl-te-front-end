@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-theme',
   template: `
     <p>
-      article works!
+      theme works!
     </p>
   `,
   styles: [
   ]
 })
-export class ArticleComponent implements OnInit {
+export class ThemeComponent implements OnInit {
 
   constructor() { }
 

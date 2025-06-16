@@ -10,8 +10,12 @@ import { RegisterComponent } from "./components/authComponent/register/register.
 import { LoginComponent } from "./components/authComponent/login/login.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
-import { ArticleComponent } from './pages/article/article.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { AuthInterceptor } from "./services/interceptors/auth.interceptor";
+import { ThemeComponent } from './components/theme/theme.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { ArticlePageComponent } from './pages/article/article-page.component';
+import { ArticlesComponent } from "./components/article/article.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ArticleComponent } from './pages/article/article.component';
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
-    ArticleComponent,
+    ArticlePageComponent,
+    ThemeComponent,
+    ProfilComponent,
+    ArticlePageComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,13 @@ import { ArticleComponent } from './pages/article/article.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
