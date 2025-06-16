@@ -1,0 +1,94 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 80vh;
+
+  .logo {
+    max-width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .back-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input.invalid {
+        border: 1px solid red;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+      }
+
+      .submit-btn {
+        margin-top: 20px;
+        align-self: center;
+        max-width: 400px;
+        background-color: #7a5af5;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #6847e3;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    .logo {
+      max-width: 150px;
+    }
+
+    .form-box {
+      .back-btn {
+        font-size: 20px;
+      }
+    }
+  }
+}
