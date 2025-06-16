@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   <img src="/assets/logo_p6.png" alt="MDD Logo" class="logo" />
 
   <div class="button-group">
-    <button>Se connecter</button>
-    <button>S’inscrire</button>
+    <button (click)="goToLogin()">Se connecter</button>
+    <button (click)="goToRegister()">S’inscrire</button>
   </div>
 </div>
   `,
@@ -16,9 +17,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
+
   }
 
 }
