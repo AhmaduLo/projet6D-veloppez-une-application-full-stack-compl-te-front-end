@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthService } from "src/app/services/auth-service.service";
+import { AuthService } from "src/app/services/auth/auth-service.service";
+
 
 @Component({
   selector: "app-login",
@@ -75,7 +76,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService
-  ) {}
+  ) { }
 
   goBack() {
     this.router.navigate(["/"]);
@@ -95,8 +96,8 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         // Ici tu peux stocker le token dans localStorage ou un service
         localStorage.setItem("token", response.token);
-          this.authService.setLoggedIn(true);
-        this.router.navigate(["/article"]); 
+        this.authService.setLoggedIn(true);
+        this.router.navigate(["/article"]);
       },
       error: (err) => {
         this.errorMessage = err.error.message || "Identifiants incorrects";
