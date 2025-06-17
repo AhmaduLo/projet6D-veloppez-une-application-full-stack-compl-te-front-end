@@ -13,13 +13,12 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    // Vérifie la présence d'un token dans le localStorage (ou autre méthode via AuthService)
-    if (this.authService.isLoggedIn()) {
-      return true; // autorise l'accès
+    const token = localStorage.getItem('token');
+    if (token) {
+      return true;
+    } else {
+      return this.router.createUrlTree(['/login']); 
     }
-
-    // Sinon, redirige vers la page de login
-    return this.router.createUrlTree(['/login']);
   }
 }
 
