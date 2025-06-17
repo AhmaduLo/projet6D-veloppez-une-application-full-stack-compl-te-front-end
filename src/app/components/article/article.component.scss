@@ -1,3 +1,14 @@
+.error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .article-container {
   padding: 20px;
   width: 80%;
@@ -27,11 +38,12 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
   }
 }
 
@@ -39,10 +51,9 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
- justify-items: center;
-  
+  justify-items: center;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 }
@@ -71,5 +82,4 @@
     color: #333;
     font-size: 14px;
   }
- 
 }
