@@ -1,0 +1,9 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.4); // gris clair avec opacité
+  z-index: 9; // doit être sous le menu mobile (qui aura z-index: 10 ou +)
+}

@@ -19,8 +19,11 @@ import { AuthService } from 'src/app/services/auth/auth-service.service';
 
   <!-- Icône burger menu mobile -->
   <button class="burger" (click)="toggleMenu()" >
-    <img src="assets/menu.png" alt="Menu" />
+    <img  *ngIf="!showMobileMenu" src="assets/menu.png" alt="Menu" />
+     <img *ngIf="showMobileMenu" src="assets/croix.png" alt="Fermer le menu" />
   </button>
+
+ 
 
   <!-- Menu mobile -->
   <nav class="nav-links mobile" *ngIf="showMobileMenu" >
@@ -44,6 +47,7 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu(): void {
     this.showMobileMenu = !this.showMobileMenu;
+
   }
 
   ngOnInit(): void {
@@ -56,5 +60,6 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(["/login"]); // ou router.navigate(['/'])
   }
+
 
 }
