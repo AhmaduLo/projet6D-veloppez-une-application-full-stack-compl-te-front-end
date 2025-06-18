@@ -9,6 +9,7 @@ import { ProfilComponent } from "./components/profil/profil.component";
 import { ArticlePageComponent } from "./pages/article/article-page.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { ArticleDetailComponent } from "./pages/article-detail/article-detail.component";
+import { NewArticleComponent } from "./pages/new-article/new-article.component";
 
 // consider a guard combined with canLoad / canActivate route option
 // to manage unauthenticated user to access private routes
@@ -35,8 +36,11 @@ const routes: Routes = [
     component: ArticleDetailComponent,
     canActivate: [AuthGuard]
   },
-
-
+   {
+    path: "newArticle",
+    component: NewArticleComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: "theme",
     component: ThemeComponent,
