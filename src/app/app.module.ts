@@ -18,6 +18,8 @@ import { ArticlePageComponent } from './pages/article/article-page.component';
 import { ArticlesComponent } from "./components/article/article.component";
 import { CommentaireComponent } from './components/commentaire/commentaire.component';
 import { ArticleDetailComponent } from './pages/article-detail/article-detail.component';
+import { NewArticleComponent } from './pages/new-article/new-article.component';
+import { NouvArticleComponent } from "./components/newArticle/nouv-article.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ArticleDetailComponent } from './pages/article-detail/article-detail.co
     ArticlePageComponent,
     ArticlesComponent,
     CommentaireComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    NouvArticleComponent,
+    NewArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { ArticleDetailComponent } from './pages/article-detail/article-detail.co
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-     FormsModule
+    FormsModule
   ],
   providers: [
     {

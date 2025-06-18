@@ -7,7 +7,7 @@ import { ArticleService } from 'src/app/services/articlesApi/article-service.ser
   template: `
    <div class="article-container">
   <div class="header-actions">
-    <button class="create-btn">Créer un article</button>
+    <button class="create-btn"  [routerLink]="['/newArticle']">Créer un article</button>
     <div class="sort" (click)="toggleSortOrder()">
       Trier par {{ sortOrder === 'desc' ? '↓' : '↑' }}
     </div>
