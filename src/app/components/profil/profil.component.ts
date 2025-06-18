@@ -99,7 +99,6 @@ export class ProfilComponent implements OnInit {
     if (this.profilForm.invalid) return;
 
     const formData = this.profilForm.value;
-    console.log("Données envoyées :", formData);
 
     // Envoie les données au backend pour mise à jour
     this.authService.updateUser(formData).subscribe({

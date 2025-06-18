@@ -4,6 +4,7 @@ export interface Article {
   content: string;
   createdAt: string;
   authorId: number;
-   authorUsername: string;
+  authorUsername: string;
   themeId: number;
+  themeName: string;
 }
