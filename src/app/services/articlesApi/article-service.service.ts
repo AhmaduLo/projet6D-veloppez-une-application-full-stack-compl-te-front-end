@@ -14,4 +14,9 @@ private apiUrl = 'http://localhost:8080/api/articles';
   getAllArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(this.apiUrl);
   }
+
+  //  Récupérer un article par ID
+  getArticleById(id: number): Observable<Article> {
+    return this.http.get<Article>(`${this.apiUrl}/${id}`);
+  }
 }

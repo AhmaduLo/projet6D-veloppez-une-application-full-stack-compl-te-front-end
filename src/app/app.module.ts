@@ -9,13 +9,15 @@ import { AccueilComponent } from "./components/accueil/accueil.component";
 import { RegisterComponent } from "./components/authComponent/register/register.component";
 import { LoginComponent } from "./components/authComponent/login/login.component";
 import { HeaderComponent } from "./components/header/header.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AuthInterceptor } from "./services/interceptors/auth.interceptor";
 import { ThemeComponent } from './components/theme/theme.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ArticlePageComponent } from './pages/article/article-page.component';
 import { ArticlesComponent } from "./components/article/article.component";
+import { CommentaireComponent } from './components/commentaire/commentaire.component';
+import { ArticleDetailComponent } from './pages/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ArticlesComponent } from "./components/article/article.component";
     ThemeComponent,
     ProfilComponent,
     ArticlePageComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    CommentaireComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { ArticlesComponent } from "./components/article/article.component";
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
+     FormsModule
   ],
   providers: [
     {

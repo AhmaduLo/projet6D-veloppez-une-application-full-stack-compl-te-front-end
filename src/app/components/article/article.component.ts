@@ -14,7 +14,7 @@ import { ArticleService } from 'src/app/services/articlesApi/article-service.ser
   </div>
 
   <div class="grid">
-    <div class="card" *ngFor="let article of articles">
+    <div class="card" *ngFor="let article of articles" [routerLink]="['/article', article.id]">
       <h3>{{ article.title }}</h3>
       <div class="meta">
         <span class="sate">{{ article.createdAt | date:'shortDate' }}</span>
